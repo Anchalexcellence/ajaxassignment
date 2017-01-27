@@ -34,11 +34,11 @@ var current=1;
                 button(total_buttons);
                    },
 
-            // complete: function()   {
-            // setTimeout(function()  {
-            // user(current);
-            //     },4000);
-            //       }
+             complete: function()   {
+             setTimeout(function()  {
+             user(current);
+                },4000);
+                   }
                }) 
              }
 
@@ -55,12 +55,13 @@ var current=1;
             for (var i in total_rows)  {
 
               var row = total_rows[i];
+              
             
               data1+=   "<tr>" +
                         "<td>" + row[0] + "</td>" +
-                        "<td>" + row[1] + "</td>" +
-                        "<td>" + row[2] + "</td>" +
-                        "<td>" + row[3] + "</td>" +
+                        "<td contenteditable id='anchal'>" + row[1] + "</td>" +
+                        "<td contenteditable>" + row[2] + "</td>" +
+                        "<td contenteditable>" + row[3] + "</td>" +
                         "<td>" + row[4] + "</td>" +
                         "</tr>";                  
                   }
@@ -78,4 +79,5 @@ var current=1;
               buttons += "</ul>";
               $(".pagination").html(buttons);
                   }
+
 

@@ -3,7 +3,10 @@ var current=1;
               {
                 current=page;
                 user(page);
+                
+                
               }
+              
            $(document).ready(function()
               {        
                 user(1);
@@ -11,6 +14,7 @@ var current=1;
             function user(page){
             var data1 = ""
             var total_rows=""
+
           
             $.ajax({ 
                 type: "POST",
@@ -34,17 +38,17 @@ var current=1;
                 button(total_buttons);
                    },
 
-             complete: function()   {
-             setTimeout(function()  {
-             user(current);
-                },4000);
-                   }
+             // complete: function()   {
+             // setTimeout(function()  {
+             // user(current);
+             //    },4000);
+             //       }
                }) 
              }
 
             function table(total_rows) {
             var data1 = ""                
-             data1+= "<table  class='table table-bordered table-striped' >"; 
+             data1+= "<table  class='table table-bordered table-striped'>"; 
                data1+=  "<tr>" +
                         "<th>ID</th>" +
                         "<th>Name</th>" +
@@ -71,13 +75,19 @@ var current=1;
                  }
    
             function button(total_pages){
+             
             
             var buttons = "<ul class='pagination' style='margin-left:590px;'>"
             for (var i = 1; i<total_pages; i ++)  {
+              if(i==current)
+              buttons +=  "<li class='active'><a id= "+i+" onclick= 'change_slide(" +i+ ")' href= '#'>"+i+"</a></li>"
+            else
               buttons +=  "<li><a id= "+i+" onclick= 'change_slide(" +i+ ")' href= '#'>"+i+"</a></li>"
+
                      }
               buttons += "</ul>";
               $(".pagination").html(buttons);
                   }
+                  
 
 

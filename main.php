@@ -9,6 +9,7 @@
       <script src="load.js"></script>
       <meta charset="utf-8">
    </head>
+   
    <body>
       <div class="container">
       </div>
@@ -110,8 +111,8 @@
                   });
       
           //evt.preventDefault();
-      //$("#form")[0].reset();
-        $("#myModal").dialog('close');
+      $("#form")[0].reset();
+
       } 
       //alert(date);
            
@@ -119,8 +120,6 @@
       
       });
    </script>
-   <script>
-
-
+   
 
 </html>
